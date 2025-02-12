@@ -3,7 +3,7 @@ import dbConnect from "@/lib/dbConnect";
 import React from "react";
 import { getProducts } from "../actions/products/getProducts";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function ProductPage() {
   // const { NEXT_PUBLIC_SERVER_ADDRESS } = process.env;

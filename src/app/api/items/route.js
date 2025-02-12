@@ -1,4 +1,4 @@
-import dbConnect from "@/lib/dbConnect";
+import dbConnect, { collectionNames } from "@/lib/dbConnect";
 import { revalidatePath } from "next/cache";
 
 export async function GET() {
@@ -18,14 +18,18 @@ export async function GET() {
 
   // return Response.json({ data });
 
-  const data = await dbConnect("practice_data").find({}).toArray();
+  const data = await dbConnect(collectionNames.PRACTICE_DATA)
+    .find({})
+    .toArray();
 
   return Response.json(data);
 }
 export async function POST(req) {
   //   console.log(req);
   const postData = await req.json();
-  const result = await dbConnect("practice_data").insertOne(postData);
+  const result = await dbConnect(collectionNames.PRACTICE_DATA).insertOne(
+    postData
+  );
   revalidatePath("/products");
   return Response.json(result);
 }

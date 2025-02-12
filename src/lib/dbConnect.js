@@ -1,4 +1,10 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+
+export const collectionNames = {
+  TEST_USER: "test_user",
+  PRACTICE_DATA: "practice_data",
+};
+
 // const uri =
 //   "mongodb+srv://<db_username>:<db_password>@cluster0.j5yqq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
